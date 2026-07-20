@@ -14,6 +14,7 @@ export default function Footer() {
       </div>
       <div className="map-wrap"><iframe title="Карта барбершопа Хорошист" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2709.2891963283287!2d39.7214441!3d47.2230111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3b970634629cb%3A0x8684d092fbbe4c34!2z0YPQuy4g0KHRg9Cy0L7RgNC-0LLQsCwgNTIsINCg0L7RgdGC0L7Qsi3QvdCwLdCU0L7QvdGDLCDQoNC-0YHRgtC-0LLRgdC60LDRjyDQvtCx0LsuLCAzNDQwMDY!5e0!3m2!1sru!2sru!4v1721300000000!5m2!1sru!2sru" /> </div>
       <div className="footer-bottom"><span>© {new Date().getFullYear()} ХОРОШИСТ</span><span>РОСТОВ-НА-ДОНУ / СУВОРОВА 52А</span><a href="#top">НАВЕРХ ↑</a></div>
+      <div className="site-author" style={{ padding: '17px 0 19px', borderTop: '1px solid rgba(24,21,19,.38)', color: '#411e10', fontFamily: "'DM Mono', monospace", fontSize: '8px', letterSpacing: '.09em' }}>Сайт разработан <a href="https://naklikay.ru/" target="_blank" rel="noopener" style={{ color: '#21130c', borderBottom: '1px solid rgba(33,19,12,.45)', textDecoration: 'none' }}>Максимом Мирошниковым</a></div>
     </footer>
   );
 }
