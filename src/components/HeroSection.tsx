@@ -1,12 +1,13 @@
 import { ChevronDown, MapPin, Scissors } from 'lucide-react';
 import { motion } from 'motion/react';
+import heroNightSign from '../assets/images/hero-night-sign.png';
 
 const features = ['МУЖСКОЙ СТИЛЬ', 'РОСТОВ-НА-ДОНУ', 'СУВОРОВА 52А', 'С 10:00 ДО 22:00'];
 
 export default function HeroSection() {
   return (
     <section className="hero" aria-labelledby="hero-title">
-      <div className="hero-image" aria-hidden="true" />
+      <div className="hero-image" aria-hidden="true" style={{ backgroundImage: `url(${heroNightSign})` }} />
       <div className="hero-ember hero-ember-left" aria-hidden="true" />
       <div className="hero-ember hero-ember-right" aria-hidden="true" />
       <div className="hero-stripe hero-stripe-top" aria-hidden="true" />
@@ -15,17 +16,11 @@ export default function HeroSection() {
       <div className="hero-content">
         <motion.h1
           id="hero-title"
-          initial={{ opacity: 0, y: 110, scale: 0.78, rotate: -2, filter: 'blur(14px)' }}
-          animate={{
-            opacity: 1,
-            y: [110, -30, 17, -8, 0],
-            scale: [0.78, 1.08, 0.96, 1.02, 1],
-            rotate: [-2, 0.8, -0.35, 0.15, 0],
-            filter: ['blur(14px)', 'blur(0px)'],
-          }}
-          transition={{ duration: 1.3, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, y: 42 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.72, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
         >
-          ХОРОШИСТ
+          <span className="neon-sign">ХОР<span className="neon-letter-fault">О</span>ШИСТ</span>
         </motion.h1>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.22 }} className="hero-subtitle">
           БАРБЕРШОП РОСТОВ
@@ -46,6 +41,7 @@ export default function HeroSection() {
         </div>
       </div>
 
+      <div className="hero-handoff" aria-hidden="true"><span /></div>
       <a className="scroll-cue" href="#masters"><span>ЛИСТАЙТЕ ВНИЗ</span><ChevronDown size={17} /></a>
     </section>
   );
