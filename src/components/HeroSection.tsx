@@ -1,6 +1,6 @@
 import { ChevronDown, MapPin, MessageCircle, Scissors, Send } from 'lucide-react';
 import { motion } from 'motion/react';
-import heroNightSign from '../assets/images/hero-night-sign.png';
+import heroNightSign from '../assets/images/hero-night-sign.webp';
 import { CONTACTS } from '../constants';
 
 const features = ['МУЖСКОЙ СТИЛЬ', 'РОСТОВ-НА-ДОНУ', 'СУВОРОВА 52А', 'С 10:00 ДО 22:00'];

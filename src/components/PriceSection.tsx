@@ -1,9 +1,7 @@
 import { Phone, Scissors } from 'lucide-react';
 import { motion } from 'motion/react';
-import { CONTACTS, GALLERY, SERVICES } from '../constants';
-
-// ponytail: слот под собственное фото прайса, пока переиспользуем кадр из галереи
-const priceShot = GALLERY.find(({ id }) => id === '06') ?? GALLERY[0];
+import priceFade from '../assets/images/price-fade.webp';
+import { CONTACTS, SERVICES } from '../constants';
 
 export default function PriceSection() {
   return (
@@ -22,7 +20,7 @@ export default function PriceSection() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.55 }}
         >
-          <img src={priceShot.src} alt={priceShot.alt} loading="lazy" />
+          <img src={priceFade} alt="Барбер выводит фейд машинкой на затылке клиента" width={1086} height={1448} loading="lazy" />
           <figcaption>Цена включает мытьё, укладку и совет по уходу</figcaption>
         </motion.figure>
 

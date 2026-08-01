@@ -1,5 +1,7 @@
 import { ArrowUpRight, Scissors } from 'lucide-react';
 import { motion } from 'motion/react';
+import giftCard from '../assets/images/gift-card.webp';
+import productsShelf from '../assets/images/products-shelf.webp';
 import { CONTACTS, PRODUCTS } from '../constants';
 
 const nominals = ['2 000 ₽', '3 000 ₽', '5 000 ₽'];
@@ -21,12 +23,7 @@ export default function GiftSection() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.55 }}
         >
-          {/* Сертификат нарисован стилями, а не фото: под брутализм так честнее и не грузит лишний PNG. */}
-          <div className="gift-card" aria-hidden="true">
-            <span className="gift-card-brand">ХОРОШИСТ</span>
-            <span className="gift-card-title">Подарочный<br />сертификат</span>
-            <span className="gift-card-foot">БАРБЕРШОП / РОСТОВ-НА-ДОНУ</span>
-          </div>
+          <img className="gift-card" src={giftCard} alt="Чёрный подарочный сертификат барбершопа на кожаной поверхности" width={1586} height={992} loading="lazy" />
           <div className="gift-card-body">
             <h3>Сертификат на любую сумму</h3>
             <p>Действует год, номинал не сгорает. Отдаём на плотном картоне или присылаем в мессенджер за пять минут.</p>
@@ -46,6 +43,7 @@ export default function GiftSection() {
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.55, delay: 0.1 }}
         >
+          <img className="products-shot" src={productsShelf} alt="Банки глины и пасты для укладки на тёмной полке" width={1448} height={1086} loading="lazy" />
           <h3>Чем мы укладываем</h3>
           <p>Те же средства, что стоят у кресла. Мастер покажет, сколько брать и как наносить.</p>
           <ul className="products-list">

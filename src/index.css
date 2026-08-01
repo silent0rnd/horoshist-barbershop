@@ -63,9 +63,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ff6422; outline-offs
 /* Caption stays inside every tile; hover only reveals the small helper label. */
 .gallery-caption, .gallery-tile:hover .gallery-caption { transform: none; transition: none; }
 
-/* The master portraits are intentionally kept close to their native 180px resolution. */
 .hero h1 { margin-top: 0; }
-.barber-photo-wrap { width: min(100%, 176px); aspect-ratio: 1; }
+.barber-photo-wrap { width: 100%; aspect-ratio: 3 / 4; }
 .barber-card:hover .barber-photo { transform: none; }
 .barber-card::before { position: absolute; z-index: 0; top: -92px; right: -92px; width: 184px; height: 184px; border: 1px solid rgba(255,99,36,.78); border-radius: 50%; content: ''; opacity: 0; transform: scale(.35); transition: transform .55s cubic-bezier(.16,1,.3,1), opacity .3s ease; }
 .barber-card::after { position: absolute; z-index: 2; right: 15px; bottom: 15px; content: 'В ФОКУСЕ'; color: #ff7d4e; font-family: 'DM Mono', monospace; font-size: 8px; letter-spacing: .12em; opacity: 0; transform: translateY(8px); transition: opacity .25s ease, transform .35s cubic-bezier(.16,1,.3,1); }
@@ -116,7 +115,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ff6422; outline-offs
 .barber-card:nth-child(2) { grid-column: span 4; margin-top: 66px; }
 .barber-card:nth-child(3) { grid-column: span 3; margin-top: 22px; }
 .barber-card:hover { transform: translateY(-6px); box-shadow: 0 20px 42px rgba(0,0,0,.24); }
-.barber-photo-wrap { width: min(100%, 176px); border: 1px solid rgba(255,255,255,.12); background: #242220; }
+.barber-photo-wrap { width: 100%; aspect-ratio: 3 / 4; border: 1px solid rgba(255,255,255,.12); background: #242220; }
 .barber-info { padding: 26px 2px 5px; }
 .barber-info h3 { font-family: Oswald, sans-serif; font-size: clamp(44px, 4.6vw, 70px); line-height: .78; }
 .barber-experience { padding: 10px 2px 0; }
@@ -244,12 +243,10 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ff6422; outline-offs
 .gift-section { background: #17110e; }
 .gift-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; max-width: 1240px; margin: 0 auto; background: rgba(255,255,255,.11); border: 1px solid rgba(255,255,255,.11); }
 .gift-card-block, .products-block { padding: clamp(26px, 3.4vw, 46px); background: #17110e; }
-.gift-card { display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 16 / 10; padding: clamp(20px, 2.4vw, 30px); border: 1px solid rgba(255,99,36,.6); background: linear-gradient(140deg, #1b1512, #0d0d0e 72%); box-shadow: inset 0 0 60px rgba(255,99,36,.09); }
-.gift-card-brand { font-family: Oswald, sans-serif; font-size: clamp(15px, 1.7vw, 20px); font-weight: 600; letter-spacing: .3em; color: #ff6324; }
-.gift-card-title { font-family: Oswald, sans-serif; font-size: clamp(26px, 3.6vw, 46px); font-weight: 400; line-height: 1.02; text-transform: uppercase; color: #f8f6f2; }
-.gift-card-foot { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .16em; color: #6c6963; }
+.gift-card, .products-shot { display: block; width: 100%; height: auto; object-fit: cover; filter: saturate(.86) contrast(1.06); }
+.gift-card { aspect-ratio: 16 / 10; border: 1px solid rgba(255,99,36,.34); }
+.products-shot { aspect-ratio: 4 / 3; }
 .gift-card-body h3, .products-block h3 { margin: 30px 0 12px; font-family: Oswald, sans-serif; font-size: clamp(22px, 2.6vw, 30px); font-weight: 400; text-transform: uppercase; letter-spacing: .02em; color: #f8f6f2; }
-.products-block h3 { margin-top: 0; }
 .gift-card-body > p, .products-block > p { margin: 0; color: #a8a29a; font-family: Manrope, sans-serif; font-size: 15px; line-height: 1.7; }
 .gift-nominals { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0 0; padding: 0; list-style: none; }
 .gift-nominals li { padding: 8px 13px; border: 1px solid rgba(255,255,255,.17); color: #d1cec8; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .07em; }

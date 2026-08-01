@@ -1,14 +1,14 @@
-import alexander from './assets/images/masters/alexander.png';
-import artem from './assets/images/masters/artem.png';
-import ilya from './assets/images/masters/ilya.png';
-import photo01 from './assets/images/gallery/barbershop-01.png';
-import photo02 from './assets/images/gallery/barbershop-02.png';
-import photo03 from './assets/images/gallery/barbershop-03.png';
-import photo04 from './assets/images/gallery/barbershop-04.png';
-import photo05 from './assets/images/gallery/barbershop-05.png';
-import photo06 from './assets/images/gallery/barbershop-06.png';
-import photo08 from './assets/images/gallery/barbershop-08.png';
-import photo09 from './assets/images/gallery/barbershop-09.png';
+import alexander from './assets/images/masters/alexander.webp';
+import artem from './assets/images/masters/artem.webp';
+import ilya from './assets/images/masters/ilya.webp';
+import photo01 from './assets/images/gallery/barbershop-01.webp';
+import photo02 from './assets/images/gallery/barbershop-02.webp';
+import photo03 from './assets/images/gallery/barbershop-03.webp';
+import photo04 from './assets/images/gallery/barbershop-04.webp';
+import photo05 from './assets/images/gallery/barbershop-05.webp';
+import photo06 from './assets/images/gallery/barbershop-06.webp';
+import photo08 from './assets/images/gallery/barbershop-08.webp';
+import photo09 from './assets/images/gallery/barbershop-09.webp';
 import type { Barber, FaqItem, GalleryItem, Product, Review, ServiceGroup, Stat } from './types';
 
 export const BARBERS: Barber[] = [
