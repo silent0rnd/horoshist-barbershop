@@ -10,7 +10,7 @@
 @font-face { font-family: 'Teko'; src: url('./assets/fonts/oswald-latin.woff2') format('woff2'); font-weight: 200 700; font-style: normal; font-display: swap; unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
 
 :root { font-family: 'Manrope', sans-serif; color: #f8f6f2; background: #0d0d0e; font-synthesis: none; }
-html { scroll-behavior: smooth; scroll-padding-top: 82px; }
+html { scroll-behavior: smooth; scroll-padding-top: 74px; }
 body { margin: 0; min-width: 320px; background: #0d0d0e; }
 button, a { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 button:focus-visible, a:focus-visible { outline: 2px solid #ff6422; outline-offset: 4px; }
@@ -181,3 +181,128 @@ button:focus-visible, a:focus-visible { outline: 2px solid #ff6422; outline-offs
 }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+
+/* ============================================================
+   Блок 5: живой CTA, бегущая строка, прайс, отзывы, сертификат, FAQ
+   Значения намеренно повторяют базовый лист: #0d0d0e / #ff6324 /
+   #f8f6f2 / #a8a29a / rgba(255,255,255,.11).
+   ============================================================ */
+
+/* --- CTA в герое --- */
+.hero-actions { flex-wrap: wrap; }
+.booking-cta { display: inline-flex; align-items: center; gap: 11px; padding: 16px 26px; border: 1px solid #ff6324; background: #ff6324; color: #0d0d0e; font-family: Manrope, sans-serif; font-size: 10px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background .22s ease, color .22s ease, box-shadow .22s ease; }
+.booking-cta:hover { background: transparent; color: #ff8c5d; box-shadow: 0 0 34px rgba(255,99,36,.34); }
+.hero-messenger { display: inline-flex; align-items: center; gap: 8px; padding: 16px 18px; border: 1px solid rgba(255,255,255,.17); color: #d1cec8; font-family: Manrope, sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: border-color .22s ease, color .22s ease; }
+.hero-messenger:hover { border-color: rgba(255,99,36,.6); color: #ff8c5d; }
+
+/* --- Бегущая строка --- */
+.marquee { position: relative; z-index: 1; overflow: hidden; padding: 26px 0; border-top: 1px solid rgba(255,255,255,.11); border-bottom: 1px solid rgba(255,255,255,.11); background: #0d0d0e; user-select: none; }
+.marquee-track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
+.marquee-track span { display: block; padding-right: .2em; font-family: Oswald, sans-serif; font-size: clamp(40px, 6vw, 88px); font-weight: 600; letter-spacing: .02em; white-space: nowrap; color: transparent; -webkit-text-stroke: 1px #ff6324; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* --- Прайс --- */
+.price-section { background: #101112; }
+.price-layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(30px, 5vw, 74px); max-width: 1240px; margin: 0 auto; align-items: start; }
+.price-shot { position: sticky; top: 106px; margin: 0; }
+.price-shot img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; filter: saturate(.82) contrast(1.08) brightness(.9); }
+.price-shot figcaption { margin-top: 15px; color: #6c6963; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; line-height: 1.7; }
+
+.price-group + .price-group { margin-top: 46px; }
+.price-group h3 { margin: 0 0 8px; color: #ff6a2a; font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.price-group ul { margin: 0; padding: 0; list-style: none; }
+.price-row { display: flex; align-items: baseline; gap: 12px; padding: 15px 12px; margin: 0 -12px; line-height: 1.1; border-bottom: 1px solid rgba(255,255,255,.08); transition: background .18s ease, color .18s ease; }
+.price-name { flex: 0 1 auto; font-family: Oswald, sans-serif; font-size: clamp(17px, 2vw, 22px); font-weight: 400; letter-spacing: .02em; text-transform: uppercase; color: #f4f0e9; }
+.price-leader { flex: 1 1 20px; min-width: 14px; border-bottom: 1px dashed rgba(255,255,255,.19); transform: translateY(-4px); }
+.price-duration { flex: none; color: #6c6963; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .07em; white-space: nowrap; }
+.price-value { flex: none; min-width: 106px; text-align: right; font-family: Oswald, sans-serif; font-size: clamp(21px, 2.6vw, 31px); font-weight: 500; color: #ff6324; letter-spacing: .01em; }
+.price-row:hover { background: #ff6324; color: #0d0d0e; }
+.price-row:hover .price-name, .price-row:hover .price-value, .price-row:hover .price-duration { color: #0d0d0e; }
+.price-row:hover .price-leader { border-bottom-color: rgba(13,13,14,.42); }
+
+.price-cta { display: inline-flex; align-items: center; gap: 11px; margin-top: 44px; padding: 17px 27px; border: 1px solid #ff6324; background: #ff6324; color: #0d0d0e; font-family: Manrope, sans-serif; font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; text-decoration: none; transition: background .22s ease, color .22s ease; }
+.price-cta:hover { background: transparent; color: #ff8c5d; }
+
+/* --- Цифры + отзывы --- */
+.reviews-section { background: #0d0e0f; }
+.stats-strip { display: grid; grid-template-columns: repeat(4, 1fr); max-width: 1240px; margin: 0 auto clamp(64px, 8vw, 118px); border-top: 1px solid rgba(255,255,255,.11); border-bottom: 1px solid rgba(255,255,255,.11); }
+.stat-cell { display: flex; flex-direction: column; gap: 9px; padding: clamp(26px, 3.4vw, 44px) clamp(14px, 2vw, 28px); }
+.stat-cell + .stat-cell { border-left: 1px solid rgba(255,255,255,.11); }
+.stat-cell strong { font-family: Oswald, sans-serif; font-size: clamp(50px, 7vw, 112px); font-weight: 500; line-height: .88; color: #ff6324; }
+.stat-cell span { color: #a8a29a; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .11em; text-transform: uppercase; line-height: 1.6; }
+
+.reviews-rail { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; max-width: 1240px; margin: 0 auto; background: rgba(255,255,255,.11); border: 1px solid rgba(255,255,255,.11); }
+.review { display: flex; flex-direction: column; gap: 18px; margin: 0; padding: clamp(26px, 3vw, 40px); background: #0d0e0f; }
+.review-quote { font-family: Oswald, sans-serif; font-size: 74px; line-height: .6; color: transparent; -webkit-text-stroke: 1px rgba(255,99,36,.66); }
+.review p { margin: 0; flex: 1; color: #d4d0c9; font-family: Manrope, sans-serif; font-size: 16px; line-height: 1.72; }
+.review footer { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.08); }
+.review-stars { display: inline-flex; gap: 2px; color: #ff6324; }
+.review cite { font-family: Oswald, sans-serif; font-size: 17px; font-style: normal; letter-spacing: .04em; text-transform: uppercase; color: #f4f0e9; }
+.review-source { margin-left: auto; padding: 4px 9px; border: 1px solid rgba(255,255,255,.17); color: #6c6963; font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+
+/* --- Сертификат и уход --- */
+.gift-section { background: #17110e; }
+.gift-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; max-width: 1240px; margin: 0 auto; background: rgba(255,255,255,.11); border: 1px solid rgba(255,255,255,.11); }
+.gift-card-block, .products-block { padding: clamp(26px, 3.4vw, 46px); background: #17110e; }
+.gift-card { display: flex; flex-direction: column; justify-content: space-between; aspect-ratio: 16 / 10; padding: clamp(20px, 2.4vw, 30px); border: 1px solid rgba(255,99,36,.6); background: linear-gradient(140deg, #1b1512, #0d0d0e 72%); box-shadow: inset 0 0 60px rgba(255,99,36,.09); }
+.gift-card-brand { font-family: Oswald, sans-serif; font-size: clamp(15px, 1.7vw, 20px); font-weight: 600; letter-spacing: .3em; color: #ff6324; }
+.gift-card-title { font-family: Oswald, sans-serif; font-size: clamp(26px, 3.6vw, 46px); font-weight: 400; line-height: 1.02; text-transform: uppercase; color: #f8f6f2; }
+.gift-card-foot { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: .16em; color: #6c6963; }
+.gift-card-body h3, .products-block h3 { margin: 30px 0 12px; font-family: Oswald, sans-serif; font-size: clamp(22px, 2.6vw, 30px); font-weight: 400; text-transform: uppercase; letter-spacing: .02em; color: #f8f6f2; }
+.products-block h3 { margin-top: 0; }
+.gift-card-body > p, .products-block > p { margin: 0; color: #a8a29a; font-family: Manrope, sans-serif; font-size: 15px; line-height: 1.7; }
+.gift-nominals { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0 0; padding: 0; list-style: none; }
+.gift-nominals li { padding: 8px 13px; border: 1px solid rgba(255,255,255,.17); color: #d1cec8; font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: .07em; }
+.gift-cta { display: inline-flex; align-items: center; gap: 9px; margin-top: 26px; padding: 15px 23px; border: 1px solid #ff6324; color: #ff8c5d; font-family: Manrope, sans-serif; font-size: 10px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; text-decoration: none; transition: background .22s ease, color .22s ease; }
+.gift-cta:hover { background: #ff6324; color: #0d0d0e; }
+
+.products-list { margin: 26px 0 0; padding: 0; list-style: none; }
+.products-list li { display: flex; align-items: baseline; gap: 14px; padding: 16px 0; border-top: 1px solid rgba(255,255,255,.08); }
+.product-index { flex: none; color: #6c6963; font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .08em; }
+.product-name { flex: 1; display: flex; flex-direction: column; gap: 4px; font-family: Oswald, sans-serif; font-size: 19px; text-transform: uppercase; letter-spacing: .03em; color: #f4f0e9; }
+.product-name small { font-family: Manrope, sans-serif; font-size: 12px; letter-spacing: .01em; text-transform: none; color: #6c6963; }
+.product-price { flex: none; font-family: Oswald, sans-serif; font-size: 21px; color: #ff6324; }
+
+/* --- FAQ --- */
+.faq-list { max-width: 1240px; margin: 0 auto; border-bottom: 1px solid rgba(255,255,255,.11); }
+.faq-list details { border-top: 1px solid rgba(255,255,255,.11); }
+.faq-list summary { display: flex; align-items: center; gap: 20px; padding: clamp(20px, 2.4vw, 30px) 0; cursor: pointer; list-style: none; font-family: Oswald, sans-serif; font-size: clamp(19px, 2.3vw, 28px); font-weight: 400; text-transform: uppercase; letter-spacing: .02em; color: #f4f0e9; transition: color .2s ease; }
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: '+'; margin-left: auto; font-size: 1.1em; line-height: 1; color: #ff6324; transition: transform .22s ease; }
+.faq-list details[open] summary::after { content: '−'; }
+.faq-list summary:hover { color: #ff8c5d; }
+.faq-list summary:focus-visible { outline: 2px solid #ff6422; outline-offset: 4px; }
+.faq-list details > p { max-width: 74ch; margin: 0; padding: 0 0 clamp(22px, 2.4vw, 32px); color: #a8a29a; font-family: Manrope, sans-serif; font-size: 16px; line-height: 1.75; }
+
+/* --- Липкая мобильная панель записи --- */
+.mobile-cta-bar { display: none; }
+
+@media (max-width: 980px) {
+  .price-layout { grid-template-columns: 1fr; }
+  .price-shot { position: static; }
+  .price-shot img { aspect-ratio: 16 / 9; }
+  .gift-layout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 62px; } /* шапка на мобиле ниже - см. .site-header выше */
+  .marquee { padding: 18px 0; }
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .stat-cell:nth-child(3), .stat-cell:nth-child(4) { border-top: 1px solid rgba(255,255,255,.11); }
+  .stat-cell:nth-child(odd) { border-left: 0; }
+
+  /* Нативный скролл-снап вместо карусельной библиотеки */
+  .reviews-rail { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 6px; background: none; border: 0; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+  .review { flex: 0 0 82%; scroll-snap-align: start; border: 1px solid rgba(255,255,255,.11); }
+
+  .price-row { flex-wrap: wrap; row-gap: 4px; }
+  .price-leader { display: none; }
+  .price-name { flex: 1 1 100%; }
+  .price-duration { order: 2; }
+  .price-value { order: 3; margin-left: auto; min-width: 0; }
+
+  .mobile-cta-bar { position: fixed; inset: auto 0 0; z-index: 45; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid rgba(255,255,255,.14); background: rgba(10,10,10,.94); backdrop-filter: blur(16px); }
+  .mobile-cta-bar a { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 54px; color: #f8f6f2; font-family: Manrope, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; }
+  .mobile-cta-bar a:first-child { background: #ff6324; color: #0d0d0e; }
+  .footer { padding-bottom: 74px; }
+}

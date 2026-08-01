@@ -1,6 +1,7 @@
-import { ChevronDown, MapPin, Scissors } from 'lucide-react';
+import { ChevronDown, MapPin, MessageCircle, Scissors, Send } from 'lucide-react';
 import { motion } from 'motion/react';
 import heroNightSign from '../assets/images/hero-night-sign.png';
+import { CONTACTS } from '../constants';
 
 const features = ['МУЖСКОЙ СТИЛЬ', 'РОСТОВ-НА-ДОНУ', 'СУВОРОВА 52А', 'С 10:00 ДО 22:00'];
 
@@ -26,9 +27,11 @@ export default function HeroSection() {
           БАРБЕРШОП РОСТОВ
         </motion.p>
         <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.55, delay: 0.48 }} className="hero-actions">
-          <button type="button" className="booking-placeholder" disabled title="Онлайн-запись скоро откроется">
-            <Scissors size={18} /> Онлайн-запись скоро откроется
-          </button>
+          <a href={CONTACTS.phoneHref} className="booking-cta">
+            <Scissors size={18} /> Записаться
+          </a>
+          <a href={CONTACTS.whatsapp} className="hero-messenger" target="_blank" rel="noreferrer"><MessageCircle size={17} /> WhatsApp</a>
+          <a href={CONTACTS.telegram} className="hero-messenger" target="_blank" rel="noreferrer"><Send size={16} /> Telegram</a>
           <a href="#contacts" className="hero-location"><MapPin size={17} /> Как нас найти</a>
         </motion.div>
 
