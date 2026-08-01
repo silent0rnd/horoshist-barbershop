@@ -1,4 +1,5 @@
 import { Menu, Scissors, X } from 'lucide-react';
+import { MotionConfig } from 'motion/react';
 import { useState } from 'react';
 import HeroSection from './components/HeroSection';
 import BarbersTeam from './components/BarbersTeam';
@@ -18,7 +19,8 @@ export default function App() {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-[#0d0d0e] text-white selection:bg-orange-500 selection:text-black">
+    <MotionConfig reducedMotion="user">
+      <div className="min-h-screen overflow-x-hidden bg-[#0d0d0e] text-white selection:bg-orange-500 selection:text-black">
       <header className="site-header">
         <a href="#top" className="brand-mark" aria-label="Хорошист - на главную">
           <span className="brand-icon"><Scissors size={17} strokeWidth={2.4} /></span>
@@ -49,6 +51,7 @@ export default function App() {
         <GallerySection />
       </main>
       <Footer />
-    </div>
+      </div>
+    </MotionConfig>
   );
 }
