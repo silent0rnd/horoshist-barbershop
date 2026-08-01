@@ -2,6 +2,7 @@ import { Menu, Scissors, X } from 'lucide-react';
 import { useState } from 'react';
 import HeroSection from './components/HeroSection';
 import BarbersTeam from './components/BarbersTeam';
+import ProcessSection from './components/ProcessSection';
 import GallerySection from './components/GallerySection';
 import Footer from './components/Footer';
 
@@ -44,6 +45,7 @@ export default function App() {
       <main id="top">
         <HeroSection />
         <BarbersTeam />
+        <ProcessSection />
         <GallerySection />
       </main>
       <Footer />
