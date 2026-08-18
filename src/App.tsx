@@ -1,6 +1,6 @@
 import { Menu, MessageCircle, Phone, Scissors, X } from 'lucide-react';
 import { MotionConfig } from 'motion/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import HeroSection from './components/HeroSection';
 import BarbersTeam from './components/BarbersTeam';
 import ProcessSection from './components/ProcessSection';
@@ -26,6 +26,14 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const closeMenu = () => setIsMenuOpen(false);
+
+  // Браузер ищет якорь раньше, чем React отрисовал разделы. Прокручиваем сами.
+  // Отступ под шапкой даёт scroll-padding-top в index.css.
+  useEffect(() => {
+    if (location.hash.length > 1) {
+      document.querySelector(location.hash)?.scrollIntoView({ behavior: 'instant' });
+    }
+  }, []);
 
   return (
     <MotionConfig reducedMotion="user">

@@ -6,6 +6,24 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
+    },
+    {
+      "name": "barbershop-audit",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vite", "--port=3210", "--strictPort"],
+      "port": 3210
+    },
+    {
+      "name": "barbershop-check",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vite", "--port=3212", "--strictPort"],
+      "port": 3212
+    },
+    {
+      "name": "barbershop-dist",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["vite", "preview", "--port=3211", "--strictPort"],
+      "port": 3211
     }
   ]
 }
