@@ -15,7 +15,7 @@ export default function BarbersTeam() {
         {BARBERS.map((barber, index) => (
           <motion.article key={barber.id} className="barber-card" initial={{ opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, amount: 0.25 }} transition={{ duration: 0.55, delay: index * 0.1 }}>
             <div className="barber-photo-wrap">
-              <img src={barber.avatar} alt={`Барбер ${barber.name}`} className="barber-photo" />
+              <img src={barber.avatar} alt={`Барбер ${barber.name}`} className="barber-photo" loading="lazy" decoding="async" />
               <span className="barber-number">0{index + 1}</span>
               <span className="barber-corner" aria-hidden="true" />
             </div>
