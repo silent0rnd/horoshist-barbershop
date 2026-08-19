@@ -27,6 +27,18 @@ export default function App() {
 
   const closeMenu = () => setIsMenuOpen(false);
 
+  // Меню закрывается так же, как лайтбокс: Escape, тап по подложке, блокировка прокрутки.
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => { if (event.key === 'Escape') closeMenu(); };
+    document.addEventListener('keydown', onKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [isMenuOpen]);
+
   // Браузер ищет якорь раньше, чем React отрисовал разделы. Прокручиваем сами.
   // Отступ под шапкой даёт scroll-padding-top в index.css.
   useEffect(() => {
@@ -60,6 +72,9 @@ export default function App() {
           </nav>
         )}
       </header>
+
+      {/* Подложка живёт вне шапки: backdrop-filter шапки ломает position: fixed внутри неё. */}
+      {isMenuOpen && <button className="mobile-nav-backdrop" type="button" onClick={closeMenu} aria-label="Закрыть меню" />}
 
       <main id="top">
         <HeroSection />

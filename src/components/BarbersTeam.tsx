@@ -6,7 +6,7 @@ export default function BarbersTeam() {
   return (
     <section id="masters" className="section team-section" aria-labelledby="masters-title">
       <div className="section-heading">
-        <p className="eyebrow"><Scissors size={15} /> Команда</p>
+        <p className="eyebrow"><Scissors size={15} /> 01 / Команда</p>
         <h2 id="masters-title">Наши мастера</h2>
         <p>Три характера, один подход - точность в каждой детали.</p>
       </div>

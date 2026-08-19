@@ -6,7 +6,7 @@ export default function FaqSection() {
     <section id="faq" className="section faq-section" aria-labelledby="faq-title">
       <div className="section-heading">
         <p className="eyebrow"><Scissors size={15} /> 07 / Вопросы</p>
-        <h2 id="faq-title">Коротко<br /><em>по делу.</em></h2>
+        <h2 id="faq-title">Коротко<br /><em>и ясно.</em></h2>
         <p>Если чего-то не нашли - просто позвоните.</p>
       </div>
 

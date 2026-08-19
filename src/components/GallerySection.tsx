@@ -41,9 +41,9 @@ export default function GallerySection() {
 
   return (
     <section id="gallery" className="section gallery-section" aria-labelledby="gallery-title">
-      <div className="gallery-topline"><span>03 / ПРОСТРАНСТВО</span><span>НАСТОЯЩИЕ КАДРЫ</span></div>
+      <div className="gallery-topline"><span>ПРОСТРАНСТВО</span><span>НАСТОЯЩИЕ КАДРЫ</span></div>
       <div className="gallery-heading">
-        <div><p className="eyebrow">Наш барбершоп</p><h2 id="gallery-title">Внутри<br /><em>Хорошиста</em></h2></div>
+        <div><p className="eyebrow">04 / Наш барбершоп</p><h2 id="gallery-title">Внутри<br /><em>Хорошиста</em></h2></div>
         <p>Без постановки. Только настоящий рабочий ритм, разговоры у зеркала и моменты, из которых складывается атмосфера.</p>
       </div>
 

@@ -1,6 +1,5 @@
 import { ChevronDown, MapPin, MessageCircle, Scissors, Send } from 'lucide-react';
 import { motion } from 'motion/react';
-import heroNightSign from '../assets/images/hero-night-sign.webp';
 import { CONTACTS } from '../constants';
 
 const features = ['МУЖСКОЙ СТИЛЬ', 'РОСТОВ-НА-ДОНУ', 'СУВОРОВА 52А', 'С 10:00 ДО 22:00'];
@@ -8,7 +7,7 @@ const features = ['МУЖСКОЙ СТИЛЬ', 'РОСТОВ-НА-ДОНУ', 'С
 export default function HeroSection() {
   return (
     <section className="hero" aria-labelledby="hero-title">
-      <div className="hero-image" aria-hidden="true" style={{ backgroundImage: `url(${heroNightSign})` }} />
+      <div className="hero-image" aria-hidden="true" />
       <div className="hero-ember hero-ember-left" aria-hidden="true" />
       <div className="hero-ember hero-ember-right" aria-hidden="true" />
       <div className="hero-stripe hero-stripe-top" aria-hidden="true" />
