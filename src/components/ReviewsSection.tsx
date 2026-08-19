@@ -24,7 +24,7 @@ export default function ReviewsSection() {
       <div className="section-heading">
         <p className="eyebrow"><Scissors size={15} /> 05 / Отзывы</p>
         <h2 id="reviews-title">Что говорят<br /><em>после кресла.</em></h2>
-        <p>Собрано с карт - мы их не редактируем и не заказываем.</p>
+        <p>Собрано с&nbsp;карт - мы&nbsp;их&nbsp;не&nbsp;редактируем и&nbsp;не&nbsp;заказываем.</p>
       </div>
 
       <div className="reviews-rail">
